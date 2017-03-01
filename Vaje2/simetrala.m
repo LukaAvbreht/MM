@@ -3,6 +3,12 @@ function p=simetrala(A,B);
 % p=simetrala(A,B);
 % p=[a b c] (ax+by+c=0)
 % A=[x1,y1], B=[x2,y2]
+if nargin < 1
+    A = [1 2];
+    B = [3 1];
+end
+
+
 
 C = (A+B)/2;
 if (A(2) == B(2))

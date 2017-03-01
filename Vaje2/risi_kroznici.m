@@ -13,22 +13,24 @@ clf;
 
 hold on;
 plot(T(:,1),T(:,2),'or');
-TT = [T,T(1,:)];
+% matriki t dodamo na koncu se enkrat prvo vrstico zato da narisemo poln
+% triotnik ukaz plot namrec narise lomljenko med tockami v matriki TT
+TT = [T;T(1,:)];
 plot(TT(:,1),TT(:,2),'r');
 [So,ro] = ocrtana_kroznica(T);
 [Sv,rv] = vcrtana_kroznica(T);
 
 %narisemo ocrtano kroznico
 fi = linspace(0,2*pi,360);
-xo = So+ro*cos(fi);
-yo = So+ro*sin(fi);
+xo = So(1)+ro*cos(fi);
+yo = So(2)+ro*sin(fi);
 plot(xo,yo,'g');
 plot(So(1),So(2),'xg');
 
 %narisemo vcrtano kroznico
 fv = linspace(0,2*pi,360);
-xv = Sv+rv*cos(fv);
-yv = Sv+rv*sin(fv);
+xv = Sv(1)+rv*cos(fv);
+yv = Sv(2)+rv*sin(fv);
 plot(xv,yv,'b');
 plot(Sv(1),Sv(2),'xb');
 
